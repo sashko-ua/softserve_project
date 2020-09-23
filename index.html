@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada&family=Montserrat:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Task manager</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav__wrapper">
+            <a class="nav__item_day" href="#">День</a>
+        </div>
+        <!-- <div class="nav__wrapper">
+            <a class="nav__item_week" href="#">Тиждень</a>
+        </div> -->
+        <div class="nav__wrapper">
+            <a class="nav__item_month" href="#">Місяць</a>
+        </div>
+        <div class="nav__wrapper">
+            <a class="nav__item_year" href="#">Рік</a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <img class="goose" src="img/goose.png" alt="goose">
+
+        <div class="day">
+            <div class="day__header">
+                <div class="data">
+                    <div class="curDate"></div>
+                </div>
+
+                <div class="addTask">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="day__body">
+                <ul class="parent"></ul>
+
+                <ul class="done"></ul>
+
+                <div class="miniMonth">
+                    <div class="miniMonth__header">
+                        <i class="fas fa-chevron-left miniMonth-chevron-left"></i>
+
+                        <div class="miniCurDate"></div>
+
+                        <i class="fas fa-chevron-right miniMonth-chevron-right"></i>
+
+                        <i class="fas fa-times"></i>
+
+                    </div>
+
+                    <div class="miniMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="miniMonth__days"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="addModal">
+                <div class="addModal__wrapper">
+                    <textarea name="text" class="textarea"></textarea>
+                    <div class="deadlinTxt">Deadline</div>
+                    <input type="time" class="time">
+                    <button class="btnAdd">Add task</button>
+                    <button class="btnCancel">Cansel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="week">
+            <div class="week__header">
+                <i class="fas fa-chevron-left week-chevron-left"></i>
+                <div class="curWeek"></div>
+                <i class="fas fa-chevron-right week-chevron-right"></i>
+            </div>
+
+            <div class="week__body">
+                <div class="weekdays">
+                    <div>Нд</div>
+                    <div>Пн</div>
+                    <div>Вт</div>
+                    <div>Ср</div>
+                    <div>Чт</div>
+                    <div>Пт</div>
+                    <div>Сб</div>
+                </div>
+            </div>
+
+        </div> -->
+
+        <div class="month">
+            <div class="month__header">
+                <i class="fas fa-chevron-left month-chevron-left"></i>
+                <div class="curMonth"></div>
+                <div class="curYear"></div>
+                <i class="fas fa-chevron-right month-chevron-right"></i>
+            </div>
+
+            <div class="month__body">
+                <div class="weekdays">
+                    <div>Нд</div>
+                    <div>Пн</div>
+                    <div>Вт</div>
+                    <div>Ср</div>
+                    <div>Чт</div>
+                    <div>Пт</div>
+                    <div>Сб</div>
+                </div>
+                <div class="month__days"></div>
+            </div>
+        </div>
+
+        <div class="year">
+            <div class="year__header">
+                <i class="fas fa-chevron-left year-chevron-left"></i>
+
+                <div class="curYearInYear"></div>
+
+                <i class="fas fa-chevron-right year-chevron-right"></i>
+            </div>
+
+            <div class="year__body">
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+
+                <div class="yearMonth">
+                    <div class="yearMonth__month"></div>
+
+                    <div class="yearMonth__body">
+                        <div class="weekdays">
+                            <div>Нд</div>
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                        </div>
+                        <div class="yearMonth__days"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
